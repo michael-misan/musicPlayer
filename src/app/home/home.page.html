@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button id="click-trigger">
+        <ion-icon name="reorder-four-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>
+      Blank
+    </ion-title>
+  </ion-toolbar>
+  <ion-popover [dismissOnSelect]="true" trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding">
+        <ion-list>
+          <ion-item [routerLink]="['/table']" [button]="true" [detail]="false">Твій тиск <ion-icon name="fitness-outline"></ion-icon></ion-item>
+          <ion-item [routerLink]="['/tracks']" [button]="true" [detail]="false">Tracks</ion-item>
+          <ion-item [routerLink]="['/video']" [button]="true" [detail]="false">Video</ion-item>
+          <ion-item [routerLink]="['/favorite.tracks']" [button]="true" [detail]="false">Favorite tracks</ion-item>
+          <ion-item [routerLink]="['/radio']" [button]="true" [detail]="false">Radio</ion-item>
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-popover>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-icon aria-hidden="true" name="airplane" slot="start"></ion-icon>
+      <ion-label>Airplane Mode</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon aria-hidden="true" name="wifi" slot="start"></ion-icon>
+      <ion-label>Wi-Fi</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon aria-hidden="true" name="bluetooth" slot="start"></ion-icon>
+      <ion-label>Bluetooth</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon aria-hidden="true" name="call" slot="start"></ion-icon>
+      <ion-label>Cellular</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

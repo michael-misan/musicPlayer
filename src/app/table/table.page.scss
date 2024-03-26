@@ -1,0 +1,54 @@
+.table-wrapper {
+   overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+th, td {
+  padding: 5px;
+  text-align: center;
+  border: 1px solid #ccc;
+  width: 25%;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.second-column {
+  width: 11%;
+}
+.second-column-1 {
+  width: 15%;
+}
+.second-column-2 {
+  width: 15%;
+}
+.second-column-3 {
+  width: 25%;
+}
+
+.column {
+  width: 11%;
+}
+.column-1 {
+  width: 15%;
+}
+.column-2 {
+  width: 15%;
+}
+.column-3 {
+  width: 25%;
+}
+.kill {
+  background-color: #ebd40b;
+  color: rgb(76, 145, 55);
+}
+.delete {
+  background-color: #ebd40b;
+}

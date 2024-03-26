@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Користувач
+    </ion-title>
+  </ion-toolbar>
+  <ion-popover trigger="click-trigger" triggerAction="click">
+    <ng-template>
+      <ion-content class="ion-padding">Hello World!</ion-content>
+    </ng-template>
+  </ion-popover>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text" [(ngModel)]="firstName">Прізвище ім'я побатькові: </ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="text" [(ngModel)]="lastName">Прізвище: </ion-input>
+    </ion-item> -->
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="number" [(ngModel)]="age">Років : </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cистолічний тиск (верхній)</ion-label>
+      <ion-input type="number" [(ngModel)]="pressure"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Діастолічний тиск (нижній) </ion-label>
+      <ion-input type="number" [(ngModel)]="pressure_2"></ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label>Дата: </ion-label>
+      
+      <ion-datetime displayFormat="YYYY-MM-DD" [(ngModel)]="date" name="date"></ion-datetime>
+    </ion-item> -->
+    <ion-button expand="full" (click)="submitForm()">Зберегти дані</ion-button>
+
+    <div>
+      <table>
+        <thead>
+          <tr>      
+            <th>ПІП</th>
+            <th class="second-column">Років</th>
+            <th class="second-column-1">Тиск 1</th>
+            <th class="second-column-2">Тиск 2</th>
+            <th class="second-column-3">Дата заповнення</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngIf="getFormData().length > 0">
+            <tr *ngFor="let data of getFormData(); let i = index">
+              <td>{{ data.firstName }}</td>
+              <td class="column">{{ data.age }}</td>
+              <td class="column-1">{{ data.pressure }}</td>
+              <td class="column-2">{{ data.pressure_2 }}</td>
+              <td class="column-3">{{ data.date }}</td>
+              <td class="kill"><button class="delete" (click)="indexToDelete = i; deleteRow()">KILL</button></td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </ion-list>
+</ion-content>
+
